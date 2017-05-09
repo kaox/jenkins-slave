@@ -8,7 +8,7 @@ ARG PASS=jenkins
 RUN apt-get update && \
 	apt-get install -y openssh-server && mkdir /var/run/sshd && \
 	# Creando usuario
-	useradd -m -d /home/jenkins -s /bin/sh jenkins && \
+	useradd -m -d /home/${USER} -s /bin/sh ${USER} && \
 	echo "${USER}:${PASS}" | chpasswd && \
 	apt-get clean
 
