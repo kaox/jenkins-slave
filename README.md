@@ -8,14 +8,15 @@ Jenkins Slave SSH
 
 Jenkins slave SSH esta basado en la imagen de openjdk.
 
+-------
 
-Instalación:
+###Instalación:
 
-
-	docker pull kaox/jenkins-slave
+	docker pull kaox/jenkins-slave:jdk6
 	
-Dockerfile
+###Dockerfile
 
+```Dockerfile
 	FROM kaox/jenkins-slave
 	
 	#Instalación Maven
@@ -32,9 +33,11 @@ Dockerfile
 	EXPOSE 22
 	
 	CMD  ["/usr/sbin/sshd", "-D"]
-	
-docker-compose.yml
+```
 
+###docker-compose.yml
+
+```
 	version: '3'
 	
 	services:
@@ -47,14 +50,12 @@ docker-compose.yml
 		- 50000:50000
 	
 	jenkins-slave:
-		image: kaox/jenkins-slave
+		image: kaox/jenkins-slave:jdk7
 		container_name: jenkins-slave
+```
 
-
-Parametros
+###Parametros
 
 	USER --> Usuario de slave (jenkins default)
 	PASS --> Password de slave (jenkins default)
 
-
-docker run -it kaox/jenkins-slave bash
