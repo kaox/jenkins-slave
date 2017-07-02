@@ -8,6 +8,12 @@ Jenkins Slave SSH
 
 Jenkins slave SSH esta basado en la imagen de openjdk.
 
+### Tags soportados:
+
+- [JDK6](https://github.com/kaox/jenkins-slave/blob/master/jdk6/Dockerfile)
+- [JDK7](https://github.com/kaox/jenkins-slave/blob/master/jdk7/Dockerfile)
+- [JDK8](https://github.com/kaox/jenkins-slave/blob/master/jdk8/Dockerfile)
+
 -------
 
 ###Instalación:
